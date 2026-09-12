@@ -8,8 +8,7 @@ import { postgresStore } from './src/db/store.ts';
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
-
+  const PORT = process.env.PORT || 3000;
   // Gzip / Brotli response compression for high performance
   app.use(compression({
     level: 6,
