@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --primary: #F97316;
+    --accent: #FACC15;
+    --dark: #18181B;
+    --background: #FAFAF9;
+    --text: #292524;
+    --card: #FFFFFF;
+    --card-border: #E4E4E7;
+    --muted: #71717A;
+    color-scheme: light;
+  }
+
+  .dark {
+    --primary: #F97316;
+    --accent: #FACC15;
+    --dark: #09090B;
+    --background: #18181B;
+    --text: #F4F4F5;
+    --card: #27272A;
+    --card-border: #3F3F46;
+    --muted: #A1A1AA;
+    color-scheme: dark;
+  }
+
+  * {
+    border-color: var(--card-border);
+  }
+
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--text);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #71717A55;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F9731688;
+}
+
+/* Utilities */
+.text-gradient {
+  background: linear-gradient(135deg, #F97316 0%, #FACC15 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient-brand {
+  background: linear-gradient(135deg, #F97316 0%, #EA580C 50%, #CA8A04 100%);
+}
+
+.border-brand-glow {
+  box-shadow: 0 0 25px -5px rgba(249, 115, 22, 0.25);
+}
+
+.dark .border-brand-glow {
+  box-shadow: 0 0 35px -5px rgba(249, 115, 22, 0.35);
+}

@@ -1,0 +1,173 @@
+// Prisma Schema for Josam Technologies Full-Stack CMS
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model AdminUser {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  name         String
+  passwordHash String
+  role         String    @default("admin")
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  lastLoginAt  DateTime?
+}
+
+model SiteSettings {
+  id               String   @id @default("default")
+  siteName         String   @default("Josam Technologies")
+  tagline          String   @default("Building Digital Experiences. Creating Powerful Brands.")
+  logoUrl          String   @default("/logo.svg")
+  iconUrl          String   @default("/logo-icon.svg")
+  heroHeadline     String   @default("Building Digital Experiences. Creating Powerful Brands.")
+  heroSubheadline  String   @default("We engineer cutting-edge web applications, bespoke graphic identity, and seamless digital services to elevate modern brands.")
+  heroBadgeText    String   @default("Empowering Modern Enterprises & Creators")
+  primaryCtaText   String   @default("Let's Work Together")
+  secondaryCtaText String   @default("View Projects")
+  updatedAt        DateTime @updatedAt
+}
+
+model AboutContent {
+  id          String   @id @default("default")
+  title       String   @default("Who We Are")
+  intro       String   @default("Josam Technologies is a modern technology studio dedicated to high-impact web development, graphic design, and essential digital services.")
+  bio         String   @default("Founded on the principles of precision, modern craftsmanship, and accessibility, we partner with enterprises, growing businesses, and individuals to bring transformative digital solutions to life.")
+  mission     String   @default("To empower businesses and individuals with robust, modern digital experiences, world-class branding, and frictionless digital services.")
+  vision      String   @default("To be the premier digital transformation and design partner recognized for technical excellence, creative integrity, and client trust.")
+  approach    String   @default("We blend clean architecture, user-centered design, and secure infrastructure to deliver scalable products that perform exceptionally.")
+  highlights  String[] @default(["Full-Stack Technical Precision", "Pixel-Perfect Visual Identity", "Secure & Scalable Infrastructure", "Timely Execution & Support"])
+  updatedAt   DateTime @updatedAt
+}
+
+model Service {
+  id               String   @id @default(cuid())
+  title            String
+  category         String   // 'web' | 'graphic' | 'cyber' | 'other'
+  iconName         String   @default("Code")
+  shortDescription String
+  fullDescription  String
+  features         String[]
+  displayOrder     Int      @default(0)
+  isPublished      Boolean  @default(true)
+  isFeatured       Boolean  @default(false)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model WebProject {
+  id               String   @id @default(cuid())
+  title            String
+  category         String
+  description      String
+  mainImage        String
+  additionalImages String[] @default([])
+  technologies     String[]
+  projectUrl       String?
+  githubUrl        String?
+  displayOrder     Int      @default(0)
+  isFeatured       Boolean  @default(false)
+  isPublished      Boolean  @default(true)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model GraphicProject {
+  id            String   @id @default(cuid())
+  title         String
+  category      String
+  description   String
+  mainImage     String
+  galleryImages String[] @default([])
+  tags          String[] @default([])
+  displayOrder  Int      @default(0)
+  isFeatured    Boolean  @default(false)
+  isPublished   Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Testimonial {
+  id            String   @id @default(cuid())
+  clientName    String
+  clientCompany String
+  clientRole    String
+  message       String
+  clientImage   String?
+  rating        Int      @default(5)
+  displayOrder  Int      @default(0)
+  isFeatured    Boolean  @default(true)
+  isPublished   Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Inquiry {
+  id               String   @id @default(cuid())
+  name             String
+  email            String
+  phone            String
+  service          String
+  description      String
+  preferredContact String   @default("whatsapp") // 'email' | 'whatsapp' | 'phone'
+  status           String   @default("new")      // 'new' | 'read' | 'archived'
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model ContactSettings {
+  id            String   @id @default("default")
+  email         String   @default("info@josamtech.com")
+  phone         String   @default("+254 700 000 000")
+  whatsapp      String   @default("+254 700 000 000")
+  description   String   @default("Ready to start your next project or have inquiries about our services? Reach out directly.")
+  businessHours String   @default("Mon – Sat: 8:00 AM – 6:00 PM")
+  updatedAt     DateTime @updatedAt
+}
+
+model LocationSettings {
+  id          String   @id @default("default")
+  locationName String  @default("Josam Technologies HQ")
+  address     String   @default("Nairobi, Kenya")
+  mapLink     String   @default("https://maps.google.com/?q=Nairobi+Kenya")
+  coordinates String   @default("-1.286389, 36.817223")
+  description String   @default("Conveniently located to serve clients locally across Kenya and globally online.")
+  updatedAt   DateTime @updatedAt
+}
+
+model SocialLink {
+  id           String   @id @default(cuid())
+  platform     String
+  platformName String
+  url          String
+  icon         String   @default("Globe")
+  displayOrder Int      @default(0)
+  isPublished  Boolean  @default(true)
+  updatedAt    DateTime @updatedAt
+}
+
+model MediaFile {
+  id           String   @id @default(cuid())
+  filename     String
+  originalName String
+  mimeType     String
+  size         Int
+  url          String
+  provider     String   @default("local") // 'local' | 's3' | 'cloudinary'
+  createdAt    DateTime @default(now())
+}
+
+model SEOSettings {
+  id              String   @id @default("default")
+  siteTitle       String   @default("Josam Technologies — Web Development & Graphic Design")
+  metaDescription String   @default("Building Digital Experiences. Creating Powerful Brands. Full-stack web applications, visual branding, and cyber digital services.")
+  ogImageUrl      String   @default("/og-image.jpg")
+  keywords        String   @default("web development, graphic design, branding, cyber services, KRA, HELB, full stack, Kenya technology")
+  robotsDirective String   @default("index, follow")
+  updatedAt       DateTime @updatedAt
+}

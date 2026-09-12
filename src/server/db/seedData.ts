@@ -1,0 +1,457 @@
+import { 
+  SiteSettings, 
+  AboutContent, 
+  ServiceItem, 
+  WebProject, 
+  GraphicProject, 
+  Testimonial, 
+  ContactSettings, 
+  LocationSettings, 
+  SocialLink, 
+  SEOSettings 
+} from '../../types';
+
+export const initialSiteSettings: SiteSettings = {
+  id: 'default',
+  siteName: 'Josam Technologies',
+  tagline: 'Building Digital Experiences. Creating Powerful Brands.',
+  logoUrl: '/logo.svg',
+  iconUrl: '/logo-icon.svg',
+  heroHeadline: 'Building Digital Experiences. Creating Powerful Brands.',
+  heroSubheadline: 'We engineer high-performance websites, bespoke graphic identities, and seamless cyber digital services tailored for ambitious businesses.',
+  heroBadgeText: 'Precision Engineering & Creative Craftsmanship',
+  primaryCtaText: "Let's Work Together",
+  secondaryCtaText: 'Explore Projects',
+  updatedAt: new Date().toISOString(),
+};
+
+export const initialAboutContent: AboutContent = {
+  id: 'default',
+  title: 'Engineering Digital Excellence & Visual Impact',
+  intro: 'Josam Technologies is a premier technology and digital services brand dedicated to bridging technical complexity with elegant, human-centric design.',
+  bio: 'We specialize in building robust full-stack web platforms, crafting unforgettable brand identities, and providing indispensable digital and compliance services. Whether launching a new venture, digitizing an existing enterprise, or navigating complex digital portals, Josam Technologies delivers with unmatched speed, security, and precision.',
+  mission: 'To empower forward-thinking businesses and individuals with robust, modern web infrastructure, iconic branding, and seamless digital service execution.',
+  vision: 'To be the most trusted technology studio and creative catalyst across East Africa and beyond, celebrated for engineering rigor, aesthetic refinement, and client success.',
+  approach: 'We reject bloated templates and fragile code. Every web system is engineered with modular architecture, strict type-safety, responsive fluidity, and resilient data backends. Every graphic design piece is strategically tailored to communicate authority, warmth, and clarity.',
+  highlights: [
+    'End-to-End Full-Stack Architecture',
+    'Custom Vector & Brand Design',
+    'Secure, Database-Driven Web Systems',
+    'Official Cyber & Digital Compliance',
+    'Mobile-First & Cloud-Ready Solutions',
+    'Dedicated Client Support & Maintenance'
+  ],
+  updatedAt: new Date().toISOString(),
+};
+
+export const initialServices: ServiceItem[] = [
+  // Full-Stack Web Development
+  {
+    id: 'srv-web-fullstack',
+    title: 'Full-Stack Web Development',
+    category: 'web',
+    iconName: 'Code2',
+    shortDescription: 'Custom, scalable web platforms built with modern TypeScript, React, Node.js, and robust relational databases.',
+    fullDescription: 'From high-conversion corporate web platforms to complex enterprise dashboards, we architect full-stack websites and business platforms with bulletproof security, instantaneous load times, and intuitive interfaces.',
+    features: [
+      'Custom Corporate & Business Websites',
+      'E-Commerce Portals & Payment Gateways',
+      'Interactive Business Dashboards & Portals',
+      'REST API Design & Integration',
+      'Database Architecture & Optimization',
+      'Ongoing Maintenance & Performance Audits'
+    ],
+    displayOrder: 1,
+    isPublished: true,
+    isFeatured: true,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'srv-web-frontend',
+    title: 'Modern Frontend & UI/UX Systems',
+    category: 'web',
+    iconName: 'Layout',
+    shortDescription: 'Fluid, responsive, accessible user interfaces crafted with Tailwind CSS, React, and micro-interactions.',
+    fullDescription: 'We transform wireframes and product visions into pixel-perfect, responsive web interfaces with smooth animations, mobile optimization, and strict accessibility standards.',
+    features: [
+      'Responsive Mobile-First Interfaces',
+      'Design System Creation & Component Libraries',
+      'Dark/Light Theme Architecture',
+      'Micro-Interactions & Motion Design',
+      'Core Web Vitals & Speed Optimization'
+    ],
+    displayOrder: 2,
+    isPublished: true,
+    isFeatured: false,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+
+  // Graphic Design
+  {
+    id: 'srv-graphic-branding',
+    title: 'Brand Identity & Logo Design',
+    category: 'graphic',
+    iconName: 'Palette',
+    shortDescription: 'Distinctive visual identities, logo marks, color systems, and comprehensive brand guidelines that command respect.',
+    fullDescription: 'A strong brand starts with a memorable visual signature. We craft complete brand ecosystems including primary logos, secondary marks, typography pairings, color palettes, and brand rulebooks.',
+    features: [
+      'Conceptual Logo Marks & Wordmarks',
+      'Comprehensive Brand Guidelines & Style Guides',
+      'Vector Asset Packages (SVG, PDF, PNG)',
+      'Typography Hierarchy & Color Theory',
+      'Brand Identity Refresh & Modernization'
+    ],
+    displayOrder: 3,
+    isPublished: true,
+    isFeatured: true,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'srv-graphic-marketing',
+    title: 'Marketing Collateral & Promotional Design',
+    category: 'graphic',
+    iconName: 'Layers',
+    shortDescription: 'High-impact posters, flyers, business cards, social media assets, and digital banners designed to convert.',
+    fullDescription: 'Elevate your marketing campaigns with bespoke digital and print collateral designed to capture attention across physical spaces and digital feeds.',
+    features: [
+      'Event Posters, Flyers & Banners',
+      'Executive Business Cards & Stationery',
+      'Social Media Ad Templates & Carousels',
+      'Company Profiles & Pitch Decks',
+      'Print-Ready CMYK & Digital RGB Artwork'
+    ],
+    displayOrder: 4,
+    isPublished: true,
+    isFeatured: false,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+
+  // Cyber & Digital Services
+  {
+    id: 'srv-cyber-kra',
+    title: 'KRA iTax & Tax Compliance Services',
+    category: 'cyber',
+    iconName: 'FileCheck',
+    shortDescription: 'Expert assistance with KRA PIN registration, annual income tax returns, VAT filing, and compliance certificates.',
+    fullDescription: 'Navigate the Kenya Revenue Authority iTax system smoothly. We provide accurate, legitimate, and timely assistance for individual and business tax compliance requirements.',
+    features: [
+      'Individual & Business KRA PIN Registration',
+      'Annual Income Tax Returns Filing (Employment & Business)',
+      'Nil Returns Submission',
+      'Tax Compliance Certificate (TCC) Filing',
+      'KRA PIN Retrieval & Contact Details Updates'
+    ],
+    displayOrder: 5,
+    isPublished: true,
+    isFeatured: true,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'srv-cyber-helb',
+    title: 'HELB & Student Financial Services',
+    category: 'cyber',
+    iconName: 'GraduationCap',
+    shortDescription: 'Higher Education Loans Board (HELB) student loans, compliance certificates, and portal management.',
+    fullDescription: 'Comprehensive support for undergraduate and TVET student loans, first-time and subsequent loan processing, and HELB compliance certificate acquisition.',
+    features: [
+      'First-Time & Subsequent HELB Student Loans',
+      'HELB Clearance & Compliance Certificate Processing',
+      'Student Portal Account Creation & Verification',
+      'Loan Status Tracking & Document Uploads'
+    ],
+    displayOrder: 6,
+    isPublished: true,
+    isFeatured: true,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'srv-cyber-ecitizen',
+    title: 'eCitizen & Digital Document Services',
+    category: 'cyber',
+    iconName: 'ShieldCheck',
+    shortDescription: 'Business name registration, NTSA portal assistance, passport and good conduct renewals, and official digital filings.',
+    fullDescription: 'Fast, secure assistance navigating official digital portals for personal and enterprise regulatory requirements.',
+    features: [
+      'eCitizen Business Name Registration & Search',
+      'CR12 Company Profile Filings',
+      'NTSA TIMS / eCitizen Driving License Renewals',
+      'Police Clearance (Good Conduct) Scheduling',
+      'Document Scanning, Formatting & Secure PDF Preparation'
+    ],
+    displayOrder: 7,
+    isPublished: true,
+    isFeatured: false,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  }
+];
+
+export const initialWebProjects: WebProject[] = [
+  {
+    id: 'proj-web-1',
+    title: 'Nexura Logistics Cloud Fleet Portal',
+    category: 'Full-Stack Website',
+    description: 'A real-time dispatch and fleet telemetry web platform handling vehicle status, route optimization, driver assignments, and automated invoicing.',
+    mainImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop',
+    additionalImages: [
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=1200&auto=format&fit=crop'
+    ],
+    technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Tailwind CSS', 'WebSockets'],
+    projectUrl: 'https://nexura-logistics.demo.josamtech.com',
+    githubUrl: 'https://github.com/josamtechnologies/nexura-fleet-portal',
+    displayOrder: 1,
+    isFeatured: true,
+    isPublished: true,
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 24 * 30).toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'proj-web-2',
+    title: 'Aura Artisan Coffee E-Commerce Suite',
+    category: 'E-commerce Platform',
+    description: 'High-performance specialty coffee roaster e-commerce storefront with subscription recurring orders, M-Pesa & card payments, and live inventory sync.',
+    mainImage: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop',
+    additionalImages: [
+      'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop'
+    ],
+    technologies: ['React 19', 'Next.js API', 'Tailwind CSS', 'Stripe', 'M-Pesa Daraja', 'Prisma'],
+    projectUrl: 'https://aura-coffee.demo.josamtech.com',
+    githubUrl: 'https://github.com/josamtechnologies/aura-coffee-storefront',
+    displayOrder: 2,
+    isFeatured: true,
+    isPublished: true,
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 24 * 20).toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'proj-web-3',
+    title: 'Apex Financial Advisors Corporate Portal',
+    category: 'Corporate Website',
+    description: 'Bespoke corporate website with client financial calculator tools, encrypted appointment booking, multi-language support, and CMS.',
+    mainImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop',
+    additionalImages: [],
+    technologies: ['TypeScript', 'Express', 'React', 'Tailwind CSS', 'Motion'],
+    projectUrl: 'https://apex-advisors.demo.josamtech.com',
+    githubUrl: null,
+    displayOrder: 3,
+    isFeatured: true,
+    isPublished: true,
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 24 * 12).toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'proj-web-4',
+    title: 'Kijani Agritech Smart Farm Dashboard',
+    category: 'IoT & Data Analytics',
+    description: 'Real-time telemetry dashboard visualizing soil moisture, weather forecast integration, automated irrigation triggers, and yield analytics.',
+    mainImage: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop',
+    additionalImages: [],
+    technologies: ['React', 'D3.js', 'Node.js', 'PostgreSQL', 'Tailwind CSS'],
+    projectUrl: 'https://kijani-agritech.demo.josamtech.com',
+    githubUrl: 'https://github.com/josamtechnologies/kijani-farm-telemetry',
+    displayOrder: 4,
+    isFeatured: false,
+    isPublished: true,
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 24 * 5).toISOString(),
+    updatedAt: new Date().toISOString(),
+  }
+];
+
+export const initialGraphicProjects: GraphicProject[] = [
+  {
+    id: 'proj-graphic-1',
+    title: 'Solaria Solar Energy Brand Identity',
+    category: 'Logo & Brand Identity',
+    description: 'Complete corporate identity system for a renewable solar provider, including geometric sunburst logo mark, stationery suite, and vehicle wraps.',
+    mainImage: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=1200&auto=format&fit=crop',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=1200&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop'
+    ],
+    tags: ['Logo Design', 'Brand Guidelines', 'Typography', 'Stationery'],
+    displayOrder: 1,
+    isFeatured: true,
+    isPublished: true,
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 24 * 25).toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'proj-graphic-2',
+    title: 'AfroTech Innovation Summit 2026 Poster Series',
+    category: 'Posters & Event Collateral',
+    description: 'Vibrant, high-contrast poster series and digital badges designed for East Africa’s premier annual software engineering conference.',
+    mainImage: 'https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1200&auto=format&fit=crop',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1572044162444-ad60f128bdea?q=80&w=1200&auto=format&fit=crop'
+    ],
+    tags: ['Event Poster', 'Typography', 'Digital Art', 'Print Design'],
+    displayOrder: 2,
+    isFeatured: true,
+    isPublished: true,
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 24 * 18).toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'proj-graphic-3',
+    title: 'Urban Roots Botanicals Packaging & Label Suite',
+    category: 'Packaging & Labels',
+    description: 'Eco-conscious packaging and label design for an organic skincare and botanical wellness brand, emphasizing earthy textures and foil accents.',
+    mainImage: 'https://images.unsplash.com/photo-1589365278144-c9e705f843ba?q=80&w=1200&auto=format&fit=crop',
+    galleryImages: [],
+    tags: ['Packaging', 'Label Design', 'Product Mockups', 'Print'],
+    displayOrder: 3,
+    isFeatured: true,
+    isPublished: true,
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 24 * 10).toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'proj-graphic-4',
+    title: 'Vanguard Fitness Social Media Campaign Kit',
+    category: 'Social Media Graphics',
+    description: 'A 24-piece Instagram carousel and story kit featuring bold typography, dynamic energy lines, and high-conversion promotional layouts.',
+    mainImage: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1200&auto=format&fit=crop',
+    galleryImages: [],
+    tags: ['Social Media', 'Instagram Kit', 'Ad Graphics', 'Motion Graphics'],
+    displayOrder: 4,
+    isFeatured: false,
+    isPublished: true,
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 24 * 3).toISOString(),
+    updatedAt: new Date().toISOString(),
+  }
+];
+
+export const initialTestimonials: Testimonial[] = [
+  {
+    id: 'test-1',
+    clientName: 'David K. Omondi',
+    clientCompany: 'Nexura Logistics Ltd',
+    clientRole: 'Managing Director',
+    message: 'Josam Technologies delivered our cloud fleet system ahead of schedule. The UI is exceptionally fast, easy for our drivers and dispatchers to use, and our operational turnaround improved by 40%.',
+    clientImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop',
+    rating: 5,
+    displayOrder: 1,
+    isFeatured: true,
+    isPublished: true,
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 24 * 15).toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'test-2',
+    clientName: 'Grace Wangari',
+    clientCompany: 'Aura Artisan Coffee',
+    clientRole: 'Founder & CEO',
+    message: 'The brand identity and e-commerce platform built by Josam Technologies gave our company immediate credibility. Their attention to detail in visual design and M-Pesa checkout flow is world-class.',
+    clientImage: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop',
+    rating: 5,
+    displayOrder: 2,
+    isFeatured: true,
+    isPublished: true,
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 24 * 10).toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'test-3',
+    clientName: 'Brian Mutua',
+    clientCompany: 'Solaria Energy Kenya',
+    clientRole: 'Head of Brand Marketing',
+    message: 'Working with Josam Technologies was effortless. They listened to our vision and translated it into a cohesive visual brand that stands out across East Africa. Highly recommended!',
+    clientImage: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop',
+    rating: 5,
+    displayOrder: 3,
+    isFeatured: true,
+    isPublished: true,
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 24 * 4).toISOString(),
+    updatedAt: new Date().toISOString(),
+  }
+];
+
+export const initialContactSettings: ContactSettings = {
+  id: 'default',
+  email: 'info@josamtech.com',
+  phone: '+254 792 000 111',
+  whatsapp: '+254 792 000 111',
+  description: 'Have a project in mind or need assistance with web development, graphic design, or cyber digital services? Reach out to us today.',
+  businessHours: 'Monday – Saturday: 8:00 AM – 6:30 PM (EAT)',
+  updatedAt: new Date().toISOString(),
+};
+
+export const initialLocationSettings: LocationSettings = {
+  id: 'default',
+  locationName: 'Josam Technologies Hub',
+  address: 'CBD & Tech Corridor, Nairobi, Kenya',
+  mapLink: 'https://maps.google.com/?q=Nairobi+CBD+Kenya',
+  coordinates: '-1.286389, 36.817223',
+  description: 'Serving clients across Kenya physically and worldwide through seamless remote collaboration.',
+  updatedAt: new Date().toISOString(),
+};
+
+export const initialSocialLinks: SocialLink[] = [
+  {
+    id: 'soc-fb',
+    platform: 'facebook',
+    platformName: 'Facebook',
+    url: 'https://facebook.com/josamtechnologies',
+    icon: 'Facebook',
+    displayOrder: 1,
+    isPublished: true,
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'soc-tt',
+    platform: 'tiktok',
+    platformName: 'TikTok',
+    url: 'https://tiktok.com/@josamtech',
+    icon: 'Video',
+    displayOrder: 2,
+    isPublished: true,
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'soc-li',
+    platform: 'linkedin',
+    platformName: 'LinkedIn',
+    url: 'https://linkedin.com/company/josam-technologies',
+    icon: 'Linkedin',
+    displayOrder: 3,
+    isPublished: true,
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'soc-gh',
+    platform: 'github',
+    platformName: 'GitHub',
+    url: 'https://github.com/josamtechnologies',
+    icon: 'Github',
+    displayOrder: 4,
+    isPublished: true,
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: 'soc-x',
+    platform: 'x',
+    platformName: 'X (Twitter)',
+    url: 'https://x.com/josamtech',
+    icon: 'Twitter',
+    displayOrder: 5,
+    isPublished: true,
+    updatedAt: new Date().toISOString(),
+  }
+];
+
+export const initialSEOSettings: SEOSettings = {
+  id: 'default',
+  siteTitle: 'Josam Technologies — Full-Stack Web Development & Graphic Design',
+  metaDescription: 'Building Digital Experiences. Creating Powerful Brands. Custom websites, brand identities, and cyber compliance services.',
+  ogImageUrl: '/logo.svg',
+  keywords: 'web development, graphic design, branding, KRA services, HELB services, digital agency, Kenya tech, full stack',
+  robotsDirective: 'index, follow',
+  updatedAt: new Date().toISOString(),
+};
